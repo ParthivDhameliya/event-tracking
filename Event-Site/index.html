@@ -5,23 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Page Title</title>
     <style>
-        /* Add your CSS styles for the header here */
+        /* Add your CSS styles for the header, form, and footer here */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
         }
-        header {
+        header, footer {
             background-color: #333;
             color: #fff;
             padding: 10px;
             text-align: center;
+            width: 100%;
         }
-
-        footer {
-        background-color: #333;
-        color: #fff;
-        padding: 20px;
-        text-align: center;
+        form {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        .footer {
+            margin-top: 100px;
         }
     </style>
 </head>
@@ -32,10 +62,58 @@
         <p>Subtitle or tagline goes here</p>
     </header>
 
-    <!-- The rest of your HTML content goes here -->
-        
-    <footer>
-        <p>&copy; 2024 Your Website. All rights reserved.</p>
+    <form id="registrationForm" onsubmit="validateForm(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <footer class="footer">
+        <p>© 2024 Your Website Name. All rights reserved.</p>
     </footer>
+
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+
+            // Get form values
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            // Simple validation example (you can add more complex validation as needed)
+            if (name.trim() === '') {
+                alert('Please enter your name.');
+                return;
+            }
+
+            if (email.trim() === '' || !validateEmail(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            if (password.trim() === '') {
+                alert('Please enter a password.');
+                return;
+            }
+
+            // If all validations pass, you can submit the form or perform other actions
+            alert('Form submitted successfully!');
+        }
+
+        function validateEmail(email) {
+            // Simple email validation regex (you can replace it with a more robust solution)
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+    </script>
+
 </body>
 </html>
