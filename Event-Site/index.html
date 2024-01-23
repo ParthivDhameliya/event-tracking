@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Page Title</title>
     <style>
-        /* Add your CSS styles for the header, form, and footer here */
+        /* Add your CSS styles for the header, form, calendar, and footer here */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -50,13 +50,29 @@
         button:hover {
             background-color: #555;
         }
-        .footer {
-            margin-top: 100px;
+        .calendar {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
-
+        .calendar-day {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            text-align: center;
+            line-height: 30px;
+            margin: 2px;
+        }
         .img {
             margin-top: 50px;
+            margin-bottom: 40px;
             text-align: center;
+        }
+        h2 {
+            margin-right: 20px;
         }
     </style>
 </head>
@@ -82,7 +98,53 @@
 
     <img src="th.jpeg" class="img">
 
-    <footer class="footer">
+    <div class="calendar">
+        <h2>February 2024</h2>
+        <!-- Calendar days for January 2024 -->
+        <div>
+            <div class="calendar-day">1</div>
+            <div class="calendar-day">2</div>
+            <div class="calendar-day">3</div>
+            <div class="calendar-day">4</div>
+            <div class="calendar-day">5</div>
+        </div>
+        <div>
+            <div class="calendar-day">6</div>
+            <div class="calendar-day">7</div>
+            <div class="calendar-day">8</div>
+            <div class="calendar-day">9</div>
+            <div class="calendar-day">10</div>
+        </div>
+        <div>
+            <div class="calendar-day">11</div>
+            <div class="calendar-day">12</div>
+            <div class="calendar-day">13</div>
+            <div class="calendar-day">14</div>
+            <div class="calendar-day">15</div>
+        </div>
+        <div>
+            <div class="calendar-day">16</div>
+            <div class="calendar-day">17</div>
+            <div class="calendar-day">18</div>
+            <div class="calendar-day">19</div>
+            <div class="calendar-day">20</div>
+        </div>
+        <div>
+            <div class="calendar-day">21</div>
+            <div class="calendar-day">22</div>
+            <div class="calendar-day">23</div>
+            <div class="calendar-day">24</div>
+            <div class="calendar-day">25</div>
+        </div>
+        <div>
+            <div class="calendar-day">26</div>
+            <div class="calendar-day">27</div>
+            <div class="calendar-day">28</div>
+            <div class="calendar-day">29</div>
+        </div>
+    </div>
+
+    <footer>
         <p>© 2024 Your Website Name. All rights reserved.</p>
     </footer>
 
